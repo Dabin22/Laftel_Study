@@ -9,30 +9,30 @@ public class Output {
 	private static String OTHERS = " others ";
 
 	public void likes(String[] names) {
-		//¹ŞÀº ¹®ÀÚ¿­ÀÌ ³ÎÀÌ ¾Æ´Ò ½Ã
+		//ë°›ì€ ë¬¸ìì—´ì´ ë„ì´ ì•„ë‹ ì‹œ
 		if (names != null) {
 			int size = names.length;
-			if(size ==0){ //³ÎÀÌ ¾Æ´ÏÁö¸¸ ¾Æ¹«°Íµµ ÀÔ·Â¹ŞÁö ¾Ê¾ÒÀ»¶§
+			if(size ==0){ //ë¬¸ìì—´ì´ 0ì´ ì•„ë‹ì‹œ 
 				front = NO_ONE;
 			}else if (size == 1) { 
-				//ÇÏ³ª ÀÏ ¶§
+				//í•œëª…ì¼ì‹œ
 				front = names[0]+" ";
 			} else if (size == 2) { 
-				//µÎ°³ ÀÏ ¶§
+				//ë‘ëª…ì¼ì‹œ
 				front = names[0] + AND + names[1];
 			} else {
-				//µÎ°³ ÀÌ»ó ÀÏ ¶§
+				
 				front = names[0] + REST + names[1];
 				if (size > 3) {
-					//3°³ ÀÌ»ó ÀÏ ¶§
+					//3ëª… ì´ìƒì¼ì‹œ	
 					front += (size - 2) + OTHERS;
 				} else {
-					//3°³ ÀÏ ¶§
+					//3ëª… ì¼ì‹œ
 					front +=AND+ names[2];
 				}
 			}
 		} else {
-			// ³Î ÀÏ¶§ 
+			
 			front = NO_ONE;
 		}
 
@@ -40,7 +40,7 @@ public class Output {
 	}
 
 	private void print() {
-		//¿Ï¼ºµÈ Ãâ·Â
+		
 		System.out.println(front + "like this");
 	}
 }

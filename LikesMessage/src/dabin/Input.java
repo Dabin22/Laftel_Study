@@ -2,7 +2,7 @@ package dabin;
 
 import java.lang.reflect.Array;
 
-//ÀÔ·Â ºÎºÐÀÔ´Ï´Ù.
+//ìž…ë ¥ ë¶€ë¶„ìž…ë‹ˆë‹¤.
 public class Input {
 
 	public static void main(String[] args) {

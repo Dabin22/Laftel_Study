@@ -35,17 +35,20 @@ public class Output {
 		
 	}
 	
+	//이제 각 계급의 값을 가지고 비교합니다.
 	private void compare() {
 		if(p1.rank>p2.rank){
 			print(P1WIN);
 		}else if(p1.rank<p2.rank){
 			print(P2WIN);
 		}else{
+			//계급 값이 같을시 카드의 값을 비교합니다.
 			detailCompare();
 		}
 		
 	}
 
+	//계급이 동일 하다면 카드 최고 값 리스트의 길이가 같으므로 하나씩 비교해 나가고 계속 같다면 무승부 판정을 내립니다.
 	private void detailCompare() {
 		int p1_max = 0;
 		int p2_max = 0;
@@ -70,8 +73,12 @@ public class Output {
 		
 	}
 
+	
+	//계급을 계산하는 
 	private void rankCalculation(CardPack card) {
+		//페어 여부를 먼저 판단합니다.
 		calPair(card);
+		//패어가 없을시 스트레이트와 플러쉬 여부를 계산합니다.
 		if (card.rank == HIGHCARD) {
 			calStraight(card);
 		}else{
@@ -83,6 +90,7 @@ public class Output {
 		}
 	}
 
+	//플러쉬 여부를 판단한뒤 이제 연속성여부를 판단합니다. 그리고 특수 경우인 10JQKA 여부도 검사해서 판단합니다.
 	private void calStraight(CardPack card) {
 		int count = 0;
 		isSameType(card);
@@ -118,7 +126,7 @@ public class Output {
 	}
 
 	private void calPair(CardPack card) {
-		
+		//4장 페어부터 차근차근 찾아봅니다.그리고 동일계급시 비교하는 최대값을 차곡차곡 저장합니다.
 		for (int i = 14; i > 0; i--) {
 			if (card.value[i] == 4) {
 				card.rank = FOUROFKIND;
@@ -153,6 +161,7 @@ public class Output {
 
 	private void isSameType(CardPack card) {
 		for (int p1 : card.type) {
+			//플러쉬여부를 계산합니다.
 			if (p1 == 5) {
 				card.rank = 6;
 			}
