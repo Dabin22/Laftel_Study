@@ -1,6 +1,5 @@
 package dabin;
 
-
 public class Output {
 	private static final String P1WIN = "Player1 win";
 	private static final String P2WIN = "Player2 win";
@@ -34,20 +33,20 @@ public class Output {
 		
 	}
 	
-	//ÀÌÁ¦ °¢ °è±ÞÀÇ °ªÀ» °¡Áö°í ºñ±³ÇÕ´Ï´Ù.
+	//ì´ì œ ê° ê³„ê¸‰ì˜ ê°’ì„ ê°€ì§€ê³  ë¹„êµí•©ë‹ˆë‹¤.
 	private void compare() {
 		if(p1.rank>p2.rank){
 			print(P1WIN);
 		}else if(p1.rank<p2.rank){
 			print(P2WIN);
 		}else{
-			//°è±Þ °ªÀÌ °°À»½Ã Ä«µåÀÇ °ªÀ» ºñ±³ÇÕ´Ï´Ù.
+			//ê³„ê¸‰ ê°’ì´ ê°™ì„ì‹œ ì¹´ë“œì˜ ê°’ì„ ë¹„êµí•©ë‹ˆë‹¤.
 			detailCompare();
 		}
 		
 	}
 
-	//°è±ÞÀÌ µ¿ÀÏ ÇÏ´Ù¸é Ä«µå ÃÖ°í °ª ¸®½ºÆ®ÀÇ ±æÀÌ°¡ °°À¸¹Ç·Î ÇÏ³ª¾¿ ºñ±³ÇØ ³ª°¡°í °è¼Ó °°´Ù¸é ¹«½ÂºÎ ÆÇÁ¤À» ³»¸³´Ï´Ù.
+	//ê³„ê¸‰ì´ ë™ì¼ í•˜ë‹¤ë©´ ì¹´ë“œ ìµœê³  ê°’ ë¦¬ìŠ¤íŠ¸ì˜ ê¸¸ì´ê°€ ê°™ìœ¼ë¯€ë¡œ í•˜ë‚˜ì”© ë¹„êµí•´ ë‚˜ê°€ê³  ê³„ì† ê°™ë‹¤ë©´ ë¬´ìŠ¹ë¶€ íŒì •ì„ ë‚´ë¦½ë‹ˆë‹¤.
 	private void detailCompare() {
 		int p1_max = 0;
 		int p2_max = 0;
@@ -73,23 +72,23 @@ public class Output {
 	}
 
 	
-	//°è±ÞÀ» °è»êÇÏ´Â 
+	//ê³„ê¸‰ì„ ê³„ì‚°í•˜ëŠ” 
 	private void rankCalculation(CardPack card) {
-		//Æä¾î ¿©ºÎ¸¦ ¸ÕÀú ÆÇ´ÜÇÕ´Ï´Ù.
+		//íŽ˜ì–´ ì—¬ë¶€ë¥¼ ë¨¼ì € íŒë‹¨í•©ë‹ˆë‹¤.
 		calPair(card);
-		//ÆÐ¾î°¡ ¾øÀ»½Ã ½ºÆ®·¹ÀÌÆ®¿Í ÇÃ·¯½¬ ¿©ºÎ¸¦ °è»êÇÕ´Ï´Ù.
+		//íŒ¨ì–´ê°€ ì—†ì„ì‹œ ìŠ¤íŠ¸ë ˆì´íŠ¸ì™€ í”ŒëŸ¬ì‰¬ ì—¬ë¶€ë¥¼ ê³„ì‚°í•©ë‹ˆë‹¤.
 		if (card.rank == HIGHCARD) {
 			calStraight(card);
 		}else{
 			for(int i=0; i<card.value.length;i++){
-				if(card.value[i] >0 && card.max.equals(i)){
+				if(card.value[i] >0 && !card.max.equals(i)){
 					card.max.add(i);
 				}
 			}
 		}
 	}
 
-	//ÇÃ·¯½¬ ¿©ºÎ¸¦ ÆÇ´ÜÇÑµÚ ÀÌÁ¦ ¿¬¼Ó¼º¿©ºÎ¸¦ ÆÇ´ÜÇÕ´Ï´Ù. ±×¸®°í Æ¯¼ö °æ¿ìÀÎ 10JQKA ¿©ºÎµµ °Ë»çÇØ¼­ ÆÇ´ÜÇÕ´Ï´Ù.
+	//í”ŒëŸ¬ì‰¬ ì—¬ë¶€ë¥¼ íŒë‹¨í•œë’¤ ì´ì œ ì—°ì†ì„±ì—¬ë¶€ë¥¼ íŒë‹¨í•©ë‹ˆë‹¤. ê·¸ë¦¬ê³  íŠ¹ìˆ˜ ê²½ìš°ì¸ 10JQKA ì—¬ë¶€ë„ ê²€ì‚¬í•´ì„œ íŒë‹¨í•©ë‹ˆë‹¤.
 	private void calStraight(CardPack card) {
 		int count = 0;
 		isSameType(card);
@@ -125,7 +124,7 @@ public class Output {
 	}
 
 	private void calPair(CardPack card) {
-		//4Àå Æä¾îºÎÅÍ Â÷±ÙÂ÷±Ù Ã£¾Æº¾´Ï´Ù.±×¸®°í µ¿ÀÏ°è±Þ½Ã ºñ±³ÇÏ´Â ÃÖ´ë°ªÀ» Â÷°îÂ÷°î ÀúÀåÇÕ´Ï´Ù.
+		//4ìž¥ íŽ˜ì–´ë¶€í„° ì°¨ê·¼ì°¨ê·¼ ì°¾ì•„ë´…ë‹ˆë‹¤.ê·¸ë¦¬ê³  ë™ì¼ê³„ê¸‰ì‹œ ë¹„êµí•˜ëŠ” ìµœëŒ€ê°’ì„ ì°¨ê³¡ì°¨ê³¡ ì €ìž¥í•©ë‹ˆë‹¤.
 		for (int i = 14; i > 0; i--) {
 			if (card.value[i] == 4) {
 				card.rank = FOUROFKIND;
@@ -160,7 +159,7 @@ public class Output {
 
 	private void isSameType(CardPack card) {
 		for (int p1 : card.type) {
-			//ÇÃ·¯½¬¿©ºÎ¸¦ °è»êÇÕ´Ï´Ù.
+			//í”ŒëŸ¬ì‰¬ì—¬ë¶€ë¥¼ ê³„ì‚°í•©ë‹ˆë‹¤.
 			if (p1 == 5) {
 				card.rank = 6;
 			}

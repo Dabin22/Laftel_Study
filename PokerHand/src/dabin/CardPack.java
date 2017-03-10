@@ -3,10 +3,10 @@ package dabin;
 import java.util.ArrayList;
 
 public class CardPack {
-	public int value[];	//Ä«µå °ªÀ» ¸ğ¾ÆµĞ ¹è¿­ÀÔ´Ï´Ù.
-	public int type[];	//Ä«µåÀÇ Á¾·ù¸¦ ¸ğ¾ÆµĞ ¹è¿­ÀÔ´Ï´Ù.
-	public int rank=1;  //Ä«µåÀÇ Á¶ÇÕÀÇ °è±ŞÀ» ³ªÅ¸³»´Â °ªÀÔ´Ï´Ù.
-	public ArrayList<Integer> max; //µ¿±ŞÀÏ½Ã ºñ±³ÇÏ´Â Å«°ªºÎÅÍ ³ª¿À´Â ¸®½ºÆ®ÀÔ´Ï´Ù.
+	public int value[];	//ì¹´ë“œ ê°’ì„ ëª¨ì•„ë‘” ë°°ì—´ì…ë‹ˆë‹¤.
+	public int type[];	//ì¹´ë“œì˜ ì¢…ë¥˜ë¥¼ ëª¨ì•„ë‘” ë°°ì—´ì…ë‹ˆë‹¤.
+	public int rank=1;  //ì¹´ë“œì˜ ì¡°í•©ì˜ ê³„ê¸‰ì„ ë‚˜íƒ€ë‚´ëŠ” ê°’ì…ë‹ˆë‹¤.
+	public ArrayList<Integer> max; //ë™ê¸‰ì¼ì‹œ ë¹„êµí•˜ëŠ” í°ê°’ë¶€í„° ë‚˜ì˜¤ëŠ” ë¦¬ìŠ¤íŠ¸ì…ë‹ˆë‹¤.
 	
 	public CardPack() {
 		value = new int[15];
