@@ -2,13 +2,9 @@ package dabin;
 
 public class Input {
 	CardPack p1,p2;
-	private Output output;
-	
+
 	private static final String ERROR = "error";
 
-	
-
-	
 	public static void main(String[] args) {
 		Input input = new Input();
 		
@@ -39,7 +35,7 @@ public class Input {
 				selectType(player1.charAt(i + 1), true);
 				selectType(player2.charAt(i + 1), false);
 			}
-			output = new Output(p1,p2);
+			new Output(p1,p2);
 			
 		} else {
 			Output.print(ERROR);

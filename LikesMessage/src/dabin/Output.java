@@ -32,7 +32,6 @@ public class Output {
 				}
 			}
 		} else {
-			
 			front = NO_ONE;
 		}
 

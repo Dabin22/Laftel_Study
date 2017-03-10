@@ -1,7 +1,5 @@
 package dabin;
 
-import java.lang.reflect.Array;
-
 //입력 부분입니다.
 public class Input {
 

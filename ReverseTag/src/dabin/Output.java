@@ -7,8 +7,8 @@ import java.util.Stack;
 public class Output {
 
 	public void reverse(String sentence) {
-		Stack st = new Stack(); //문장 전체를 받는 스택
-		Queue q = new LinkedList(); //태그부분을 받는 큐
+		Stack<String> st = new Stack<>(); //문장 전체를 받는 스택
+		Queue<String> q = new LinkedList<String>(); //태그부분을 받는 큐
 		boolean tag = false; //태그안의 문자인지를 구분하기 위한 부울변수
 		String temp_word = ""; //태그안의 글자들을 넣는 임시 문자열 변수
 		
@@ -16,7 +16,7 @@ public class Output {
 		for(int i =0; i<sentence.length(); i++){
 			if(sentence.charAt(i)!='<'&& !tag){
 				//태그가 아닌 글자들을 한글자씩 스택에 넣는다.
-				st.push(sentence.charAt(i));	
+				st.push(sentence.charAt(i)+"");	
 			}else{
 				//임시 변수에 태그표시 안의 글자들을 넣는다.
 				temp_word += sentence.charAt(i);
@@ -39,7 +39,7 @@ public class Output {
 		
 	}
 
-	private void print(Stack st,Queue q) {
+	private void print(Stack<String> st,Queue<String> q) {
 		String str = "";
 		String result = "";
 		while(!st.empty()){

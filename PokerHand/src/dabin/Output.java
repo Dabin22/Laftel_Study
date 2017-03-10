@@ -1,6 +1,5 @@
 package dabin;
 
-import java.util.ArrayList;
 
 public class Output {
 	private static final String P1WIN = "Player1 win";
