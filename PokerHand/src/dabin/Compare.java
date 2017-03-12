@@ -1,6 +1,6 @@
 package dabin;
 
-public class Output {
+public class Compare {
 	private static final String P1WIN = "Player1 win";
 	private static final String P2WIN = "Player2 win";
 	private static final String DRAW = "Draw";
@@ -23,7 +23,7 @@ public class Output {
 	
 
 	
-	public Output(CardPack p1, CardPack p2) {
+	public Compare(CardPack p1, CardPack p2) {
 		this.p1 = p1;
 		this.p2 = p2;
 		

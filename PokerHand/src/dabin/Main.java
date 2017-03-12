@@ -1,24 +1,24 @@
 package dabin;
 
-public class Input {
+public class Main {
 	CardPack p1,p2;
 
 	private static final String ERROR = "error";
 
 	public static void main(String[] args) {
-		Input input = new Input();
+		Main game = new Main();
 		
 		String player1 = "As 8d Ad 8c 5d";
 		String player2 = "Qh Qs Jd Kd Jc";
-		input.input_card(player1, player2);
+		game.input_card(player1, player2);
 		
 		player1 = "Ks Kc Jd Kd Jc";
 		player2 = "Jh Js Jd Kd Jc";
-		input.input_card(player1, player2);
+		game.input_card(player1, player2);
 		
 		player1 = "Ad Kh Ac 7h 7d";
 		player2 = "Ah Kh Ac 7h 7d";
-		input.input_card(player1, player2);
+		game.input_card(player1, player2);
 		
 	}
 	
@@ -35,10 +35,10 @@ public class Input {
 				selectType(player1.charAt(i + 1), true);
 				selectType(player2.charAt(i + 1), false);
 			}
-			new Output(p1,p2);
+			new Compare(p1,p2);
 			
 		} else {
-			Output.print(ERROR);
+			Compare.print(ERROR);
 		}
 
 	}
@@ -65,7 +65,7 @@ public class Input {
 				inputValue(value - 51, isP1);
 				break;
 			default:
-				Output.print(ERROR);
+				Compare.print(ERROR);
 				break;
 			}
 		}
@@ -99,7 +99,7 @@ public class Input {
 			inputType(type - 's' + 3, isP1);
 			break;
 		default:
-			Output.print(ERROR);
+			Compare.print(ERROR);
 			break;
 		}
 
